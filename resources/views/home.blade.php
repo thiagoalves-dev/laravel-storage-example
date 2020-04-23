@@ -66,7 +66,7 @@
     <body>
         <div class="flex-center position-ref full-height">
 
-            <form action="{{ route('home.store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('home.storeS3') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <input name="profile_image" type="file">
                 <button type="submit">Submit</button>
