@@ -13,15 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', 'HomeController@index')->name('home.index');
+
 Route::get('/products', 'ProductsController@index');
 Route::get('/products/{product}', 'ProductsController@show');
 
 Route::get('/categories/{category}', 'CategoriesController@show');
 
-Route::get('/', 'HomeController@index')->name('home.index');
-
 Route::post('/', 'HomeController@store')->name('home.store');
 Route::post('/storeS3', 'HomeController@storeS3')->name('home.storeS3');
 
-Route::get('/{filename}', 'HomeController@show')->name('home.show');
+//Route::get('/{filename}', 'HomeController@show')->name('home.show');
 Route::get('/show-s3/{filename}', 'HomeController@showS3')->name('home.showS3');
+
+Route::resource('registers', 'RegistersController', ['only' => ['index', 'create', 'store']]);
