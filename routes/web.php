@@ -27,3 +27,5 @@ Route::post('/storeS3', 'HomeController@storeS3')->name('home.storeS3');
 Route::get('/show-s3/{filename}', 'HomeController@showS3')->name('home.showS3');
 
 Route::resource('registers', 'RegistersController', ['only' => ['index', 'create', 'store']]);
+
+Route::post('/users', 'UsersController@store')->name('users.store');
